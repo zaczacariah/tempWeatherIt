@@ -1,0 +1,244 @@
+@import url("https://use.typekit.net/kyl3gam.css");
+
+/* Initalise */
+:root {
+  --font-base: "Neue Haas Grotesk", sans-serif;
+  --primary-color: #465ab8;
+  --secondary-color: #323d50;
+  --black-color: #030303;
+  --darkBlue-color: #261460;
+  --highlight-color: #5d77ec;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: var(--font-base);
+}
+
+/* Top Header */
+header {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
+    height:fit-content;
+    padding:10px;
+    background: linear-gradient(to right,  var(--primary-color), var(--darkBlue-color));
+
+}
+
+header h1{
+    text-align: right;
+    width:70%;
+    color: white;
+
+}
+
+/* MAIN PAGE SECTION */
+section.main {
+    display:flex;
+    flex-direction: row;
+    gap:20px;
+    padding:10px;
+    align-content:center;
+    vertical-align: middle;
+}
+
+.searchInfo{
+    display:flex;
+    flex-direction: column;
+    flex-basis: 16%;
+    align-content: center;
+    vertical-align: top;
+    gap:20px;
+}
+/* All Left Hand Search Info area */
+
+    .searchInfo div{
+        display:flex;
+        flex-direction: column;
+        align-content: center;
+        vertical-align: top;
+        gap:10px;
+    }
+
+    .searchInfo .search {
+        padding-top:5px;
+    }
+    .searchInfo .search::after {
+        content: '';
+        width:100%;
+        border:none;
+        border-bottom: 1.5px solid rgb(199, 199, 199);
+    }
+
+    .searchInfo .search h2{
+        font-size: 1.8rem;
+    }
+
+    .searchInfo .search form{
+        display:flex;
+        flex-direction: column;
+        gap:10px;
+    }
+
+    .search form input{
+        height:35px;
+        border-radius:3px;
+        border: 1px solid var(--primary-color);
+        padding-left:10px;
+        font-size:1rem;
+    }
+
+    .search form button {
+        height:35px;
+        border-radius:3px;
+        border: none;
+        background: var(--primary-color);
+        color:#fff;
+        font-size:1rem;
+        transition: all ease 0.8s;
+
+        &:hover{
+            background: var(--darkBlue-color);
+            cursor: pointer;
+        }
+    }
+
+    .searchInfo .history button{
+        height:35px;
+        border-radius:3px;
+        border: none;
+        background: grey;
+        color: black;
+        font-size:1rem;
+        transition: all ease 0.8s;
+        text-transform: capitalize;
+
+        &:hover{
+            background: var(--highlight-color);
+            cursor: pointer;
+            color: #fff;
+        }
+    }
+
+.weatherInfo{
+    display:flex;
+    flex-direction: column;
+    flex-basis: 84%;
+    align-content: center;
+    vertical-align: top;
+    gap:20px;
+    padding:5px;
+}
+
+/* All Right Hand Weather Info */
+
+    .today {
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        border: 1px solid var(--darkBlue-color);
+        border-radius: 5px;
+        padding:10px;
+        padding-top: 5px;
+        padding-bottom: 20px;
+        width:calc(100% - 30px);
+
+    }
+
+    .today span{
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        height: fit-content;
+   
+
+    }
+
+    .today h3{
+        width: fit-content;
+        text-transform: capitalize;
+        font-size:1.6rem;
+    }
+
+    .today img {
+        width: 50px;
+        height: 50px;
+        margin-left:10px;
+    }
+
+    .fiveDay {
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        width: calc(100% - 20px);
+    }
+
+    .fiveDay .cards {
+        display: flex;
+        flex-direction: row;
+        gap:15px;
+        flex-wrap: wrap;
+        
+    }
+
+    .fiveDay .cards .card {
+        display:flex;
+        flex-direction: column;
+        flex-basis:19%;
+        padding:20px;
+        background: var(--secondary-color);
+        gap:15px;
+        color:white;
+        border-radius:5px;
+
+     
+
+        &:hover {
+            background: var(--highlight-color);
+        }
+    }
+
+    .fiveDay .cards .card img {
+        width: 50px;
+        height: 50px;
+        margin-left:10px;
+    }
+
+    .cards p:nth-child(1){
+        font-weight:600;
+    }
+
+
+@media screen and (max-width:800px){
+    header h1{
+        width:100%;
+        text-align: center;
+    }
+
+
+}
+
+@media screen and (max-width:550px){
+    section.main{
+        flex-direction: column;
+    }  
+
+    .today{
+        width:100%;
+    }
+
+    .fiveDay {
+        width:100%;
+    }
+
+    .fiveDay .cards{
+        gap:5px;
+    }
+
+
+}
